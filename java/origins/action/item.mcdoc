@@ -4,9 +4,40 @@ use ::java::origins::util::enchant::Enchantment
 use ::java::origins::util::attribute::AttributeModifier
 use ::java::world::component::CustomData
 
+enum(string) ItemActionType {
+	AConsume = "apoli:consume",
+OConsume = "origins:consume",
+ADamage = "apoli:damage",
+ODamage = "origins:damage",
+AHolderAction = "apoli:holder_action",
+OHolderAction = "origins:holder_action",
+AMergeNbt = "apoli:merge_nbt",
+OMergeNbt = "origins:merge_nbt",
+AModify = "apoli:modify",
+OModify = "origins:modify",
+ARemoveEnchantment = "apoli:remove_enchantment",
+ORemoveEnchantment = "origins:remove_enchantment",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AChoice = "apoli:choice",
+OChoice = "origins:choice",
+ADelay = "apoli:delay",
+ODelay = "origins:delay",
+AIfElse = "apoli:if_else",
+OIfElse = "origins:if_else",
+AIfElseList = "apoli:if_else_list",
+OIfElseList = "origins:if_else_list",
+ANothing = "apoli:nothing",
+ONothing = "origins:nothing",
+ASide = "apoli:side",
+OSide = "origins:side",
+}
 
 struct ItemAction {
-	type: #[id] #[dispatcher_key="origins:item_action"] string,
+	type: #[id] #[dispatcher_key="origins:item_action"] ItemActionType,
 	...origins:item_action[[type]],
 }
 

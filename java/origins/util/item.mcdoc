@@ -8,10 +8,10 @@ use super::NBT
 struct ItemStack {
     /// ID of a registered item.
 	#[until="1.21"]
-    item: (#[id="item"] string | string),
+    item: #[id="item"] string,
     /// ID of a registered item.
 	#[since="1.21"]
-    id: (#[id="item"] string | string),
+    id: #[id="item"] string,
     /// Size of the stack.
 	#[until="1.21"]
     amount?: byte,

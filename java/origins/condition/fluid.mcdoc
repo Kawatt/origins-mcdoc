@@ -1,5 +1,26 @@
+
+enum(string) FluidConditionType {
+AEmpty = "apoli:empty",
+OEmpty = "origins:empty",
+AInTag = "apoli:in_tag",
+OInTag = "origins:in_tag",
+AStill = "apoli:still",
+OStill = "origins:still",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AConstant = "apoli:constant",
+OConstant = "origins:constant",
+ANot = "apoli:not",
+ONot = "origins:not",
+AOr = "apoli:or",
+OOr = "origins:or",
+}
+
 struct FluidCondition {
-	type: #[id] #[dispatcher_key="origins:fluid_condition"] string,
+	type: #[id] #[dispatcher_key="origins:fluid_condition"] FluidConditionType,
     /// If true, the condition acts inverted.
     inverted?: boolean,
 	...origins:fluid_condition[[type]],

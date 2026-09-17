@@ -1,7 +1,31 @@
 use ::java::origins::util::compare::Comparison
 
+enum(string) BiomeConditionType {
+ACategory = "apoli:category",
+OCategory = "origins:category",
+AHighHumidity = "apoli:high_humidity",
+OHighHumidity = "origins:high_humidity",
+AInTag = "apoli:in_tag",
+OInTag = "origins:in_tag",
+APrecipitation = "apoli:precipitation",
+OPrecipitation = "origins:precipitation",
+ATemperature = "apoli:temperature",
+OTemperature = "origins:temperature",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AConstant = "apoli:constant",
+OConstant = "origins:constant",
+ANot = "apoli:not",
+ONot = "origins:not",
+AOr = "apoli:or",
+OOr = "origins:or",
+}
+
 struct BiomeCondition {
-	type: #[id] #[dispatcher_key="origins:biome_condition"] string,
+	type: #[id] #[dispatcher_key="origins:biome_condition"] BiomeConditionType,
     /// If true, the condition acts inverted.
     inverted?: boolean,
 	...origins:biome_condition[[type]],

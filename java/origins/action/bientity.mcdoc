@@ -3,8 +3,49 @@ use super::super::condition::EntityCondition
 use ::java::origins::util::attribute::AttributeModifier
 use ::java::origins::util::DamageSource
 
+
+enum(string) BiEntityActionType {
+	AActorAction = "apoli:actor_action",
+OActorAction = "origins:actor_action",
+AAddToSet = "apoli:add_to_set",
+OAddToSet = "origins:add_to_set",
+AAddVelocity = "apoli:add_velocity",
+OAddVelocity = "origins:add_velocity",
+ADamage = "apoli:damage",
+ODamage = "origins:damage",
+AInvert = "apoli:invert",
+OInvert = "origins:invert",
+AMount = "apoli:mount",
+OMount = "origins:mount",
+ARemoveFromSet = "apoli:remove_from_set",
+ORemoveFromSet = "origins:remove_from_set",
+ASetInLove = "apoli:set_in_love",
+OSetInLove = "origins:set_in_love",
+ATame = "apoli:tame",
+OTame = "origins:tame",
+ATargetAction = "apoli:target_action",
+OTargetAction = "origins:target_action",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AChoice = "apoli:choice",
+OChoice = "origins:choice",
+ADelay = "apoli:delay",
+ODelay = "origins:delay",
+AIfElse = "apoli:if_else",
+OIfElse = "origins:if_else",
+AIfElseList = "apoli:if_else_list",
+OIfElseList = "origins:if_else_list",
+ANothing = "apoli:nothing",
+ONothing = "origins:nothing",
+ASide = "apoli:side",
+OSide = "origins:side",
+}
+
 struct BientityAction {
-	type: #[id] #[dispatcher_key="origins:bientity_action"] string,
+	type: #[id] #[dispatcher_key="origins:bientity_action"] BiEntityActionType,
 	...origins:bientity_action[[type]],
 }
 

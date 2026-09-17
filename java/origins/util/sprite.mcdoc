@@ -1,6 +1,6 @@
 type ResourceBarFile = (
     #[id] ResourceBar |
-    #[id] string |
+    //#[id] string |
 )
 
 type BadgeFile = (

@@ -3,8 +3,46 @@ use ::java::origins::util::DamageSourceName
 
 use super::EntityCondition
 
+enum(string) DamageConditionType {
+AAmount = "apoli:amount",
+OAmount = "origins:amount",
+AAttacker = "apoli:attacker",
+OAttacker = "origins:attacker",
+ABypassesArmor = "apoli:bypasses_armor",
+OBypassesArmor = "origins:bypasses_armor",
+AExplosive = "apoli:explosive",
+OExplosive = "origins:explosive",
+AFire = "apoli:fire",
+OFire = "origins:fire",
+AFromFalling = "apoli:from_falling",
+OFromFalling = "origins:from_falling",
+AInTag = "apoli:in_tag",
+OInTag = "origins:in_tag",
+AName = "apoli:name",
+OName = "origins:name",
+AOutOfWorld = "apoli:out_of_world",
+OOutOfWorld = "origins:out_of_world",
+AProjectile = "apoli:projectile",
+OProjectile = "origins:projectile",
+AType = "apoli:type",
+OType = "origins:type",
+AUnblockable = "apoli:unblockable",
+OUnblockable = "origins:unblockable",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AConstant = "apoli:constant",
+OConstant = "origins:constant",
+ANot = "apoli:not",
+ONot = "origins:not",
+AOr = "apoli:or",
+OOr = "origins:or",
+}
+
 struct DamageCondition {
-	type: #[id] #[dispatcher_key="origins:damage_condition"] string,
+	type: #[id] #[dispatcher_key="origins:damage_condition"] DamageConditionType,
     /// If true, the condition acts invertedX
     inverted?: boolean,
 	...origins:damage_condition[[type]],

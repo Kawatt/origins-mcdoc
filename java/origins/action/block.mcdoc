@@ -3,8 +3,46 @@ use ::java::origins::action::EntityAction
 use ::java::origins::util::Shape
 use ::java::origins::util::NBT
 
+enum(string) BlockActionType {
+	AAddBlock = "apoli:add_block",
+OAddBlock = "origins:add_block",
+AAreaOfEffect = "apoli:area_of_effect",
+OAreaOfEffect = "origins:area_of_effect",
+ABonemeal = "apoli:bonemeal",
+OBonemeal = "origins:bonemeal",
+AExecuteCommand = "apoli:execute_command",
+OExecuteCommand = "origins:execute_command",
+AExplode = "apoli:explode",
+OExplode = "origins:explode",
+AModifyBlockState = "apoli:modify_block_state",
+OModifyBlockState = "origins:modify_block_state",
+AOffset = "apoli:offset",
+OOffset = "origins:offset",
+ASetBlock = "apoli:set_block",
+OSetBlock = "origins:set_block",
+ASpawnEntity = "apoli:spawn_entity",
+OSpawnEntity = "origins:spawn_entity",
+
+AAnd = "apoli:and",
+OAnd = "origins:and",
+AChance = "apoli:chance",
+OChance = "origins:chance",
+AChoice = "apoli:choice",
+OChoice = "origins:choice",
+ADelay = "apoli:delay",
+ODelay = "origins:delay",
+AIfElse = "apoli:if_else",
+OIfElse = "origins:if_else",
+AIfElseList = "apoli:if_else_list",
+OIfElseList = "origins:if_else_list",
+ANothing = "apoli:nothing",
+ONothing = "origins:nothing",
+ASide = "apoli:side",
+OSide = "origins:side",
+}
+
 struct BlockAction {
-	type: #[id] #[dispatcher_key="origins:block_action"] string,
+	type: #[id] #[dispatcher_key="origins:block_action"] BlockActionType,
 	...origins:block_action[[type]],
 }
 
